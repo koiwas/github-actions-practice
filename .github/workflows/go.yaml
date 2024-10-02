@@ -20,14 +20,3 @@ jobs:
 
       - name: Build
         run: go build -v .
-
-  notify:
-    runs-on: ubuntu-latest
-    needs: build
-    if: ${{ always() }}
-    steps:
-      - name: Slack
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_USERNAME: TestBot
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
