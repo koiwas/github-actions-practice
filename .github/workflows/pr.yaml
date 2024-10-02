@@ -10,9 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # コンテキスト
       - name: プルリクエスト情報を表示
         run: |
-          echo "ユーザ名: ${{ github.actor }}"
+          echo "プルリクエストの作成者: ${{ github.event.pull_request.user.login }}"
           echo "プルリクエストのブランチ名: ${{ github.head_ref }}"
           echo "プルリクエストの番号: ${{ github.event.pull_request.number }}"
-          echo "プルリクエストの作成者: ${{ github.event.pull_request.user.login }}"
+
