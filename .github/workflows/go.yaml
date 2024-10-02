@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        id: checkout
+
+      - name: Show checkout status
+        run: echo "${{ steps.checkout.conclusion }}"
 
       - name: Set up Go
         uses: actions/setup-go@v5
