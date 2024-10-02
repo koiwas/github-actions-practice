@@ -29,4 +29,5 @@ jobs:
       - name: Slack
         uses: rtCamp/action-slack-notify@v2
         env:
+          SLACK_USERNAME: TestBot
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
